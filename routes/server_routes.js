@@ -2,7 +2,6 @@ import express from 'express';
 import dotenv from 'dotenv';
 import { HumanMessage, SystemMessage } from "langchain/schema";
 import { ChatOpenAI } from "langchain/chat_models/openai";
-import { CommaSeparatedListOutputParser } from 'langchain/output_parsers';
 
 dotenv.config();
 
