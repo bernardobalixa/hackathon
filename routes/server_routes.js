@@ -51,10 +51,10 @@ router.get("/abc", async (req, res) => {
 		var resposta = JSON.parse(chatModelResult.content);
 		var meningitis = resposta.includes('Meningitis');
 
-		resposta.filter(e => e != "Meningitis");
+		var respostas = resposta.filter(e => e != "Meningitis");
 		res.json({
 			isMeningitis: meningitis,
-			others: resposta
+			others: respostas
 		});
 	} catch (error) {
 		res.json({
