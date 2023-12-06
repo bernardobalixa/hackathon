@@ -1,16 +1,14 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import path from 'path';
+import {CommaSeparatedListOutputParser} from 'langchain/output_parsers';
 
 dotenv.config();
 
 const router = express.Router();
 
-console.log(process.env.OPENAI_API_KEY);
 
-router.get("/abc", (req, res) => {
+router.post("/abc", (req, res) => {
     
 });
-
 
 export default router;

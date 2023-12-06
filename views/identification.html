@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/ebd56a91cc.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/identification.css" />
+  </head>
+  <body>
+    <nav>
+      <h1>
+        <i class="fa-solid fa-laptop-medical"></i>Identification and monitoring
+        of meningitis
+      </h1>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a class="active" href="#">Identification</a></li>
+        <li><a href="/monitoring">Monitoring</a></li>
+      </ul>
+    </nav>
+
+    <div id="main_content">
+      <div id="form_container">
+        <p>
+          Fill out the following form to determine if you may have meningitis:
+        </p>
+        <form id="identification_form">
+          <div class="input_container">
+            <span class="perguntas">Do you have a fever?</span>
+            <div class="respostas">
+              <select name="fever" id="fever_input">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+              </select>
+            </div>
+          </div>
+          <div class="input_container">
+            <span class="perguntas"
+              >Since when do you experience headaches?</span
+            >
+            <div class="respostas">
+              <label for=""
+                ><input
+                  type="number"
+                  name="headaches_days"
+                  id="headaches_days_input"
+                />
+                days</label
+              >
+            </div>
+          </div>
+          <div class="input_container">
+            <span class="perguntas">Are you throwing up?</span>
+            <div class="respostas">
+              <select name="throwing" id="throwing_input">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+              </select>
+            </div>
+          </div>
+          <div class="input_container">
+            <span class="perguntas"
+              >Do you have any redness or patches on your body?</span
+            >
+            <div class="respostas">
+              <select name="redness" id="redness_input">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+              </select>
+            </div>
+          </div>
+          <div class="input_container">
+            <span class="perguntas">Are you dizzy?</span>
+            <div class="respostas">
+              <select name="dizzy" id="dizzy_input">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+              </select>
+            </div>
+          </div>
+          <div class="input_container">
+            <span class="perguntas">Do you have neck stiffness?</span>
+            <div class="respostas">
+              <select name="stiffness" id="stiffness_input">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit">Identify</button>
+        </form>
+      </div>
+
+      <div id="result_container">
+        <p>Result:</p>
+        <div></div>
+      </div>
+    </div>
+
+    <button id="btn"></button>
+
+    <script src="/js/main.js"></script>
+  </body>
+</html>
