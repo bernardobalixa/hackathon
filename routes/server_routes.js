@@ -43,8 +43,13 @@ router.post("/abc", async (req, res) => {
 	try {
 		const chatModelResult = await chatModel.predictMessages(messages);
 		var resposta = JSON.parse(chatModelResult.content);
+		var meningitis = resposta.includes('Meningitis');
 
-		res.json(resposta);
+		var respostas = resposta.filter(e => e != "Meningitis");
+		res.json({
+			isMeningitis: meningitis,
+			others: respostas
+		});
 	} catch (error) {
 		res.json({
 			erro: true,
