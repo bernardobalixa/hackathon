@@ -8,17 +8,11 @@ dotenv.config();
 
 const router = express.Router();
 
-router.get("/abc", async (req, res) => {
+router.use(express.json());
 
-	var request = {
-		fever: "yes",
-		headacheDuration: 2,
-		vomits: "yes",
-		redness: "yes",
-		dizziness: "yes",
-		stiffness: "yes"
-	};
+router.post("/abc", async (req, res) => {
 
+	var request = req.body;
 
 	var request_string = "Imagine you are evaluating a clinical case. I will send you a list of symptoms and you will return me a javascript array with the possible disease names that correspond to the group of symptoms. ONLY, return a javascript array with the possible disease names. The symptoms are: \n";
 	var request_array = [];
@@ -30,7 +24,7 @@ router.get("/abc", async (req, res) => {
 		}
 		else {
 			if (request[key] > 0)
-			request_array.push("headache for " + request[key] + " days");
+			    request_array.push("headache for " + request[key] + " days");
 		}
 	}
 

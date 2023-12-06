@@ -5,14 +5,23 @@ const identificationForm = document.forms["identification_form"];
 $(identificationForm).on("submit", e => {
     e.preventDefault();
 
-    $.post(api_url+"/abc", {
+    let dados = {
         fever: identificationForm["fever"].value,
-        headaches_days: identificationForm["headaches_days"].value,
-        throwing: identificationForm["throwing"].value,
+        headacheDuration: identificationForm["headaches_days"].value,
+        vomits: identificationForm["throwing"].value,
         redness: identificationForm["redness"].value,
-        dizzy: identificationForm["dizzy"].value,
+        dizziness: identificationForm["dizzy"].value,
         stiffness: identificationForm["stiffness"].value
-    }, res => {
-        console.log(res);
-    });
+    }
+
+    $.ajax({
+        type: 'POST',
+        url: api_url+"/abc",
+        data: JSON.stringify(dados),
+        success: data => {
+            console.log(data);
+        },
+        contentType: "application/json",
+        dataType: "json"
+    })
 });

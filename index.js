@@ -10,6 +10,8 @@ global.__dirname = path.resolve("");
 const port = 3030;
 const app = express();
 
+app.use(express.json());
+
 app.use(cors());
 app.use(express.static("public"));
 
