@@ -33,17 +33,18 @@ router.post("/abc", async (req, res) => {
 	console.log(request_string);
 	const messages = [
 		new SystemMessage(
-			"Imagine you are evaluating a clinical case. I will send you a list of symptoms and you will return me a javascript array with the possible disease names that correspond to the group of symptoms. ONLY, return a javascript array with double quotes with the possible disease names."
+			"Imagine you are evaluating a clinical case. I will send you a list of symptoms and you will return me a javascript array with the most probable disease name that correspond to the group of symptoms. ONLY, return a javascript array with double quotes with the possible disease name."
 		),
 		new HumanMessage(request_array),
 	]
 
-	const chatModel = new ChatOpenAI();
+	const chatModel = new ChatOpenAI({
+        temperature: 0
+    });
 
 	try {
 		const chatModelResult = await chatModel.predictMessages(messages);
 		var resposta = JSON.parse(chatModelResult.content);
-
 		var meningitis = resposta.includes('Meningitis');
 		var respostas = resposta.filter(e => e != "Meningitis");
 		res.json({

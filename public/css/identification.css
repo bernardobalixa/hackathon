@@ -1,23 +1,54 @@
+body {
+    background-color: rgb(243, 243, 243);
+}
+
 #main_content {
     padding: 20px 50px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    height: calc(100vh - 180px);
 }
 
+
 #main_content #form_container {
-    background-color: rgb(243, 243, 243);
+    background-color: white;
+    
+}
+
+#main_content #form_container,
+#main_content #result_container {
     border-radius: 10px;
     padding: 10px;
     box-sizing: border-box;
+    width: 40vw;
+    box-shadow: 0 5px 20px rgb(211, 211, 211);
+    transition: box-shadow .3s ease, transform .3s ease;
 }
 
-#main_content #result_container {
-    width: max-content;
-    background-color: gray;
+#main_content #form_container:hover,
+#main_content #result_container:hover {
+    box-shadow: 0 5px 25px rgb(211, 211, 211);
+    transform: scale(1.01);
 }
 
-#main_content #form_container > p {
+#main_content #form_container > p,
+#main_content #result_container > p {
     font-weight: bold;
+    font-size: 18pt;
+    color: rgb(59, 59, 59);
+}
+
+#main_content #result_container > p {
+    text-align: center;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#main_content #result_container > p .close_results_btn {
+    cursor: pointer;
 }
 
 #identification_form {
@@ -56,4 +87,51 @@
 
 #identification_form button:hover {
     transform: scale(1.1);
+}
+
+.result_text_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-size: 20pt;
+    font-weight: bold;
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px 0;
+    box-shadow: 1px 5px 2px rgba(172, 172, 172, 0.39);
+}
+
+#result_container {
+    display: none;
+    padding: 15px;
+}
+
+#result_great_success  {
+    color: rgb(207, 17, 17);
+    border-left: solid 5px rgb(207, 17, 17);
+}
+
+#result_success {
+    color: rgb(206, 140, 18);
+    border-left: solid 5px rgb(206, 140, 18);
+}
+
+#result_fail {
+    color: green;
+    border-left: solid 5px green;
+}
+
+#result_container .disclaimer {
+    font-size: 10pt;
+    border: solid 1px red;
+    padding: 5px;
+    margin-top: 30px;
+    background-color: white;
+}
+
+#result_container .disclaimer span {
+    font-weight: bolder;
+    color: red;
+    font-size: 12pt;
 }
