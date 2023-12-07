@@ -5,6 +5,8 @@ const resultContainer = $("#result_container");
 const great_success_result = $("#result_great_success");
 const success_result = $("#result_success");
 const result_fail = $("#result_fail");
+const typesMeningitis = $("#typesMeningitis");
+const diseaseList = $("#diseaseList");
 
 $(identificationForm).on("submit", e => {
     e.preventDefault();
@@ -16,12 +18,12 @@ $(identificationForm).on("submit", e => {
         redness: identificationForm["redness"].value,
         dizziness: identificationForm["dizzy"].value,
         stiffness: identificationForm["stiffness"].value,
-        confusion: "no",
-        photophobia: "no",
-        coldHandsAndFeet: "no",
-        highRespiratoryRate: "no",
-        muscleAndJointPain: "no",
-        sleppiness: "no"
+        confusion: identificationForm["confusion"].value,
+        photophobia: identificationForm["photophobia"].value,
+        cold_hands_and_feet: identificationForm["coldHandsAndFeet"].value,
+        high_respiratory_rate: identificationForm["highRespiratoryRate"].value,
+        muscle_and_joint_pain: identificationForm["muscleAndJointPain"].value,
+        sleepiness: identificationForm["sleepiness"].value
     }
 
     $.ajax({
@@ -31,21 +33,31 @@ $(identificationForm).on("submit", e => {
         success: data => {
             console.log(data);
             if (!data.error) {
-                if (data.isMeningitis) {
-                    if (data.others.length > 0) {
-                        success_result.show();
-                        great_success_result.hide();
-                        result_fail.hide();
-                    } else {
+				typesMeningitis.hide();
+                if (data.isMeningitis == 2) {
                         success_result.hide();
                         great_success_result.show();
                         result_fail.hide();
-                    }
-                } else {
+						resultContainer.css("background-color", "#F2B2B7");
+						typesMeningitis.html("Probable type: " + data.meningitisTypes[0].bold() + "<br>" +
+											"Other possible types: " + data.meningitisTypes.splice(1).join(", "));
+						typesMeningitis.show();
+				}
+            	else if (data.isMeningitis == 1) {
+                        success_result.show();
+                        great_success_result.hide();
+                        result_fail.hide();
+						resultContainer.css("background-color", "#FFB290");
+                }
+				else {
                     success_result.hide();
                     great_success_result.hide();
+					resultContainer.css("background-color", "#CFFBCF");
                     result_fail.show();
                 }
+				diseaseList.html("Other probable diseases: " + "<br>" +
+								data.others.join(", "));
+				diseaseList.show();
                 resultContainer.show();
             }
         },

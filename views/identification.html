@@ -33,6 +33,7 @@
           Fill out your symptomatology:
         </p>
         <form id="identification_form">
+		<div id="form_grid">
           <div class="input_container">
             <span class="perguntas">Fever</span>
             <div class="respostas">
@@ -96,38 +97,89 @@
               </select>
             </div>
           </div>
-
-          <button type="submit">Identify</button>
+		  <div class="input_container">
+            <span class="perguntas">Confusion</span>
+            <div class="respostas">
+              <select name="confusion" id="confusion_input">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+              </select>
+            </div>
+          </div>
+		  <div class="input_container">
+            <span class="perguntas">Photophobia</span>
+            <div class="respostas">
+              <select name="photophobia" id="photophobia_input">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+              </select>
+            </div>
+          </div>
+		  <div class="input_container">
+            <span class="perguntas">Cold hands and feet</span>
+            <div class="respostas">
+              <select name="coldHandsAndFeet" id="coldHandsAndFeet_input">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+              </select>
+            </div>
+          </div>
+		  <div class="input_container">
+            <span class="perguntas">High respiratory rate</span>
+            <div class="respostas">
+              <select name="highRespiratoryRate" id="highRespiratoryRate_input">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+              </select>
+            </div>
+          </div>
+		  <div class="input_container">
+            <span class="perguntas">Muscle and joint pain</span>
+            <div class="respostas">
+              <select name="muscleAndJointPain" id="muscleAndJointPain_input">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+              </select>
+            </div>
+          </div>
+		  <div class="input_container">
+            <span class="perguntas">Sleepiness</span>
+            <div class="respostas">
+              <select name="sleepiness" id="sleepiness_input">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+              </select>
+            </div>
+          </div>
+		</div>
+          <button type="submit">CHECK</button>
         </form>
       </div>
 
       <div id="result_container">
         <p>
-          Results
           <i class="fa-solid fa-times close_results_btn"></i>
         </p>
         <div id="result">
           <div id="result_great_success" class="result_text_container">
-            <i class="fa-solid fa-circle-exclamation icon"></i><span class="result">It is very likely that you have meningitis.</span>
+            <i class="fa-solid fa-circle-exclamation icon"></i><span class="result"><b>VERY LIKELY</b> to have meningitis.</span>
           </div>
           <div id="result_success" class="result_text_container">
-            <i class="fa-solid fa-user-doctor icon"></i><span class="result">It is likely that you have meningitis.</span>
+            <i class="fa-solid fa-user-doctor icon"></i><span class="result"><b>LIKELY</b> to have meningitis.</span>
           </div>
           <div id="result_fail" class="result_text_container">
-            <i class="fa-solid fa-shield-virus icon"></i><span class="result">You are not likely to have meningitis.</span>
+            <i class="fa-solid fa-shield-virus icon"></i><span class="result"><b>NOT LIKELY</b> to have meningitis.</span>
           </div>
-
+		  <div id="typesMeningitis"></div>
+		  <div id="diseaseList"></div>
           <div class="disclaimer">
-            <span>DISCLAIMER!</span> THIS WEBSITE DOES NOT PROVIDE MEDICAL ADVICE The information, including but not limited to, text, graphics, images and other material contained on this website are for informational purposes only. No material on this site is intended to be a substitute for professional medical advice, diagnosis or treatment. Always seek the advice of your physician or other qualitied health care provider with any questions you may have regarding a medical condition or treatment and before undertaking a new health care regimen, and never disregard professional medical advice or delay in
+            <span>DISCLAIMER!</span> <b>THIS WEBSITE DOES NOT PROVIDE MEDICAL ADVICE</b>.<br><br>The information, including but not limited to, text, graphics, images and other material contained on this website are for informational purposes only. No material on this site is intended to be a substitute for professional medical advice, diagnosis or treatment. Always seek the advice of your physician or other qualitied health care provider with any questions you may have regarding a medical condition or treatment and before undertaking a new health care regimen, and never disregard professional medical advice or delay in
             seeking it because of something you have read on this website
           </div>
 
         </div>
       </div>
     </div>
-
-    <button id="btn"></button>
-
     <script src="/js/main.js"></script>
   </body>
 </html>
