@@ -1,0 +1,68 @@
+#slider_container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#slider_container .arrow {
+    cursor: pointer;
+}
+
+#slider_container .slider_imgs_container {
+    height: 150px;
+    width: 620px;
+    overflow: hidden;
+    padding: 10px;
+}
+
+#slider_container .slider_imgs_container .slider_imgs{
+    display: flex;
+    gap: 20px;
+    transition: margin-left 1s ease-out;
+}
+
+#slider_container .slider_imgs_container .slider_imgs .slider_img {
+    position: relative;
+    width: 300px;
+    height: 150px;
+}
+
+#slider_container .slider_imgs_container .slider_imgs .slider_img .btn_container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    opacity: 0;
+    transition: opacity .5s ease;
+}
+
+#slider_container .slider_imgs_container .slider_imgs .slider_img .btn_container:hover {
+    opacity: 1;
+}
+
+#slider_container .slider_imgs_container .slider_imgs .slider_img .btn_container button {
+    color: white;
+    background: none;
+    border: solid 1px white;
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: bold;
+    transition: color .4s ease, background-color .4s ease;
+    cursor: pointer;
+}
+
+#slider_container .slider_imgs_container .slider_imgs .slider_img .btn_container button:hover {
+    background-color: white;
+    color: rgb(82, 82, 82);
+}
+
+#slider_container .slider_imgs_container .slider_imgs .slider_img img{
+    width: 300px;
+    box-shadow: 0 0 10px rgb(114, 114, 114);
+}
