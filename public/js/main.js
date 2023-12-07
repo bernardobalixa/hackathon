@@ -69,3 +69,13 @@ $(identificationForm).on("submit", e => {
 $("#result_container > p .close_results_btn").click(e => {
     resultContainer.hide();
 })
+
+$.ajax({
+	type: 'POST',
+	url: api_url + "/getSummary",
+	success: data => {
+		console.log(data);
+	},
+	contentType: "application/json",
+	dataType: "json"
+});

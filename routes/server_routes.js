@@ -2,19 +2,32 @@ import express from 'express';
 import dotenv from 'dotenv';
 import { HumanMessage, SystemMessage } from "langchain/schema";
 import { ChatOpenAI } from "langchain/chat_models/openai";
-import { PythonShell } from 'python-shell';
-
-PythonShell.run( "./exemplo.py", {
-	args: [process.env.OPENAI_API_KEY]
-}).then(results => {
-	console.log(results);
-})
+import { OpenAI } from "langchain/llms/openai";
 
 dotenv.config();
 
 const router = express.Router();
 
 router.use(express.json());
+
+router.post("/getSummary", async (req, res) => {
+	const llm = new OpenAI({
+		temperature: 0,
+	  });
+
+	const chatModel = new ChatOpenAI();
+
+	const messages = [
+		new SystemMessage(
+			"Imagine you are a Meningitis expert. I will ask you for the 6 most informative websites about meningitis on the internet? You will return me, ONLY, a JSON array with an object with the parameters: name, url and summary. ONLY, send me the content of the JSON array, nothing more"
+		),
+		new HumanMessage("What are the 6 most informative websites about meningitis on the internet? Answer me only with the content of a JSON array and nothing more"),
+	]
+
+	const chatModelResult = await chatModel.predictMessages(messages);
+
+ 	res.send(chatModelResult.content);
+});
 
 router.post("/abc", async (req, res) => {
 
