@@ -9,6 +9,4 @@ docs = loader.load()
 llm = ChatOpenAI(temperature=0)
 chain = load_summarize_chain(llm, chain_type="stuff")
 
-
-
 chain.run(docs)

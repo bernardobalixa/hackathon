@@ -23,8 +23,23 @@
 
 #slider_container .slider_imgs_container .slider_imgs .slider_img {
     position: relative;
-    width: 300px;
-    height: 150px;
+    min-width: 300px;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    box-shadow: 0 0 10px rgb(139, 139, 139);
+}
+
+#slider_container .slider_imgs_container .slider_imgs .slider_img .icon {
+    font-size: 50pt;
+    color: rgb(82, 82, 224);
+}
+
+#slider_container .slider_imgs_container .slider_imgs .slider_img .site_name {
+    font-size: 17pt;
 }
 
 #slider_container .slider_imgs_container .slider_imgs .slider_img .btn_container {
@@ -51,10 +66,19 @@
     background: none;
     border: solid 1px white;
     border-radius: 5px;
-    padding: 10px;
     font-weight: bold;
     transition: color .4s ease, background-color .4s ease;
     cursor: pointer;
+}
+
+#slider_container .slider_imgs_container .slider_imgs .slider_img .btn_container button a{
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    transition: color .4s ease;
+    display: inline-block;
+    padding: 10px;
 }
 
 #slider_container .slider_imgs_container .slider_imgs .slider_img .btn_container button:hover {
@@ -62,7 +86,47 @@
     color: rgb(82, 82, 82);
 }
 
+#slider_container .slider_imgs_container .slider_imgs .slider_img .btn_container button:hover a {
+    color: rgb(82, 82, 82);
+}
+
 #slider_container .slider_imgs_container .slider_imgs .slider_img img{
     width: 300px;
     box-shadow: 0 0 10px rgb(114, 114, 114);
+}
+
+#resumo_container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+#resumo {
+    width: 300px;
+    height: 300px;
+    background-color: white;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 5px;
+}
+
+#resumo .header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 15pt;
+    justify-content: space-between;
+}
+
+#resumo .content {
+    font-size: 13pt;
 }

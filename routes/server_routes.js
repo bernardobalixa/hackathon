@@ -4,12 +4,6 @@ import { HumanMessage, SystemMessage } from "langchain/schema";
 import { ChatOpenAI } from "langchain/chat_models/openai";
 import { PythonShell } from 'python-shell';
 
-PythonShell.run( "./exemplo.py", {
-	args: [process.env.OPENAI_API_KEY]
-}).then(results => {
-	console.log(results);
-})
-
 dotenv.config();
 
 const router = express.Router();
