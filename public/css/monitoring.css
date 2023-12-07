@@ -1,3 +1,15 @@
+#main_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 100px 0;
+}
+
+#main_container > h2:nth-child(2){
+    margin-top: 40px;
+}
+
 #slider_container {
     display: flex;
     align-items: center;
@@ -39,7 +51,8 @@
 }
 
 #slider_container .slider_imgs_container .slider_imgs .slider_img .site_name {
-    font-size: 17pt;
+    font-size: 13pt;
+    text-align: center;
 }
 
 #slider_container .slider_imgs_container .slider_imgs .slider_img .btn_container {
@@ -69,6 +82,7 @@
     font-weight: bold;
     transition: color .4s ease, background-color .4s ease;
     cursor: pointer;
+    padding: 10px;
 }
 
 #slider_container .slider_imgs_container .slider_imgs .slider_img .btn_container button a{
@@ -77,8 +91,6 @@
     width: 100%;
     height: 100%;
     transition: color .4s ease;
-    display: inline-block;
-    padding: 10px;
 }
 
 #slider_container .slider_imgs_container .slider_imgs .slider_img .btn_container button:hover {
@@ -125,8 +137,73 @@
     align-items: center;
     font-size: 15pt;
     justify-content: space-between;
+    border-bottom: solid 1px black;
+    padding-bottom: 15px;
+}
+
+#resumo .header .close {
+    cursor: pointer;
 }
 
 #resumo .content {
     font-size: 13pt;
+}
+
+#chat_container {
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgb(204, 204, 204);
+}
+
+#chat_history {
+    height: 500px;
+    max-height: 500px;
+    overflow-y: scroll;
+    width: 400px;
+    gap: 30px;
+    padding-bottom: 20px;
+}
+
+#chat_history .mensagem {
+    width: 300px;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+
+#chat_history .me {
+    float: right;
+    background-color: #e4eaef;
+}
+
+
+#chat_history .ai {
+    float: left;
+    background-color: #515e70;
+    color: white;
+}
+
+#chat_form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-top: solid 1px rgb(150, 150, 150);
+}
+
+#chat_form input{
+    height: 40px;
+    width: 80%;
+    padding: 10px;
+    border: none;
+}
+
+#chat_form input:focus{
+    outline: none;
+    border: none;
+}
+
+#chat_form button{
+    width: calc(20% - 20px);
+    height: 60px;
+    min-height: 60px;
+    border: none;
 }

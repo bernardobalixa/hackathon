@@ -31,7 +31,6 @@ $(identificationForm).on("submit", e => {
         url: api_url+"/abc",
         data: JSON.stringify(dados),
         success: data => {
-            console.log(data);
             if (!data.error) {
 				typesMeningitis.hide();
                 if (data.isMeningitis == 2) {

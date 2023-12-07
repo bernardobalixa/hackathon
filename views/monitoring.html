@@ -17,8 +17,7 @@
   <body>
     <nav>
       <h1>
-        <i class="fa-solid fa-laptop-medical"></i>Identification and monitoring
-        of meningitis
+        <i class="fa-solid fa-laptop-medical"></i>MeningitisCare Hub
       </h1>
       <ul>
         <li><a href="/">Home</a></li>
@@ -28,105 +27,24 @@
     </nav>
 
     <div id="main_container">
+      <h2>Some meaningful websites about Meningitis</h2>
       <div id="slider_container">
         <i class="fa-solid fa-chevron-left slider_left arrow"></i>
         <div class="slider_imgs_container">
-          <div class="slider_imgs">
-            <div class="slider_img">
-              <i class="fa-solid fa-globe icon"></i>
-              <span class="site_name">Mayor Clinic</span>
-              <div class="btn_container">
-                <button>
-                  <a
-                    target="_blank"
-                    href="https://www.cdc.gov/meningitis/index.html"
-                    >Visitar</a
-                  >
-                </button>
-                <button>Resumir</button>
-              </div>
-            </div>
-            <div class="slider_img">
-              <img src="/imgs/nhs.png" alt="Nhs" />
-              <div class="btn_container">
-                <button>
-                  <a
-                    target="_blank"
-                    href="https://www.nhs.uk/conditions/meningitis/"
-                    >Visitar</a
-                  >
-                </button>
-                <button>Resumir</button>
-              </div>
-            </div>
-            <div class="slider_img">
-              <img src="/imgs/sns.png" alt="SNS" />
-              <div class="btn_container">
-                <button>
-                  <a
-                    target="_blank"
-                    href="https://www.sns24.gov.pt/en/tema/doencas-infecciosas/meningite-bacteriana/"
-                    >Visitar</a
-                  >
-                </button>
-                <button>Resumir</button>
-              </div>
-            </div>
-            <div class="slider_img">
-              <img src="/imgs/wikipedia.png" alt="Wikipedia" />
-              <div class="btn_container">
-                <button>
-                  <a
-                    target="_blank"
-                    href="https://en.wikipedia.org/wiki/Meningitis"
-                    >Visitar</a
-                  >
-                </button>
-                <button>Resumir</button>
-              </div>
-            </div>
-            <div class="slider_img">
-              <img src="/imgs/clevelandclinic.png" alt="Cleveland Clinic" />
-              <div class="btn_container">
-                <button>
-                  <a
-                    target="_blank"
-                    href="https://my.clevelandclinic.org/health/diseases/14600-meningitis"
-                    >Visitar</a
-                  >
-                </button>
-                <button>Resumir</button>
-              </div>
-            </div>
-            <div class="slider_img">
-              <img src="/imgs/mayoclinic.png" alt="Mayo Clinic" />
-              <div class="btn_container">
-                <button>
-                  <a
-                    target="_blank"
-                    href="https://www.mayoclinic.org/diseases-conditions/meningitis/symptoms-causes/syc-20350508"
-                    >Visitar</a
-                  >
-                </button>
-                <button>Resumir</button>
-              </div>
-            </div>
-            <div class="slider_img">
-              <img src="/imgs/cdc.png" alt="Cdc" />
-              <div class="btn_container">
-                <button>
-                  <a
-                    target="_blank"
-                    href="https://www.cdc.gov/meningitis/index.html"
-                    >Visitar</a
-                  >
-                </button>
-                <button>Resumir</button>
-              </div>
-            </div>
-          </div>
+          <div class="slider_imgs"></div>
         </div>
         <i class="fa-solid fa-chevron-right slider_right arrow"></i>
+      </div>
+
+      <h2>Chat</h2>
+      <div id="chat_container">
+        <div id="chat_history"></div>
+        <form id="chat_form">
+          <input type="text" name="message" />
+          <button type="submit">
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </form>
       </div>
     </div>
 
@@ -134,7 +52,7 @@
       <div id="resumo">
         <div class="header">
           <span class="title">Resumo de Mayo Clinic</span>
-          <i class="fa-solid fa-times close"></i>
+          <i class="fa-solid fa-times close" onclick="hideResumo()"></i>
         </div>
 
         <div class="content">
@@ -147,5 +65,6 @@
     </div>
 
     <script src="/js/monitoring.js"></script>
+    <script src="/js/loadSummary.js"></script>
   </body>
 </html>
